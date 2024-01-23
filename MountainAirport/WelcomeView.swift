@@ -37,10 +37,7 @@ struct WelcomeView: View {
     var body: some View {
         NavigationSplitView {
             List(sidebarButtons, selection: $selectedView) { button in
-                VStack {
-                    Text(button.title)
-                    Text(button.subtitle)
-                }
+                WelcomeButtonView(title: button.title, subTitle: button.subtitle)
             }
             .listStyle(.plain)
             .navigationTitle("Mountain Airport")
