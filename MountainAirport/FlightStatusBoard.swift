@@ -9,6 +9,7 @@ import SwiftUI
 
 struct FlightStatusBoard: View {
     @State private var hidePast = false
+    @State private var path: [FlightInformation] = []
 
     var flights: [FlightInformation]
 
@@ -16,8 +17,10 @@ struct FlightStatusBoard: View {
         hidePast ? flights.filter { $0.localTime >= Date() } : flights
     }
 
+    var flightToShow: FlightInformation?
+
     var body: some View {
-        NavigationStack {
+        NavigationStack(path: $path) {
             List(shownFlights, id: \.id) { flight in
                 NavigationLink(flight.statusBoardName, value: flight)
             }
@@ -30,6 +33,11 @@ struct FlightStatusBoard: View {
                     Toggle("Hide Past", isOn: $hidePast)
                         .toggleStyle(.switch)
                 }
+            }
+        }
+        .onAppear {
+            if let flight = flightToShow {
+                path.append(flight)
             }
         }
     }
