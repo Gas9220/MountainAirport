@@ -7,9 +7,33 @@
 
 import SwiftUI
 
+struct FlightList: View {
+    var flights: [FlightInformation]
+    var flightToShow: FlightInformation?
+    @State private var path: [FlightInformation] = []
+
+    var body: some View {
+        NavigationStack(path: $path) {
+            List(flights, id: \.id) { flight in
+                NavigationLink(flight.statusBoardName, value: flight)
+            }
+            .navigationDestination(
+                for: FlightInformation.self,
+                destination: { flight in
+                    FlightDetails(flight: flight)
+                }
+            )
+        }
+        .onAppear {
+            if let flight = flightToShow {
+                path.append(flight)
+            }
+        }
+    }
+}
+
 struct FlightStatusBoard: View {
     @State private var hidePast = false
-    @State private var path: [FlightInformation] = []
 
     var flights: [FlightInformation]
 
@@ -20,30 +44,40 @@ struct FlightStatusBoard: View {
     var flightToShow: FlightInformation?
 
     var body: some View {
-        NavigationStack(path: $path) {
-            List(shownFlights, id: \.id) { flight in
-                NavigationLink(flight.statusBoardName, value: flight)
+        TabView {
+            FlightList(
+                flights: shownFlights.filter { $0.direction == .arrival }
+            )
+            .tabItem {
+                Image("descending-airplane")
+                    .resizable()
+                Text("Arrivals")
             }
-            .navigationDestination(for: FlightInformation.self) { flight in
-                FlightDetails(flight: flight)
+            FlightList(
+                flights: shownFlights,
+                flightToShow: flightToShow
+            )
+            .tabItem {
+                Image(systemName: "airplane")
+                    .resizable()
+                Text("All")
             }
-            .navigationTitle("Today's Flight Status")
-            .toolbar {
-                ToolbarItem(placement: .topBarTrailing) {
-                    Toggle("Hide Past", isOn: $hidePast)
-                        .toggleStyle(.switch)
-                }
+            FlightList(
+                flights: shownFlights.filter { $0.direction == .departure }
+            )
+            .tabItem {
+                Image("ascending-airplane")
+                Text("Departures")
             }
         }
-        .onAppear {
-            if let flight = flightToShow {
-                path.append(flight)
-            }
-        }
+        .navigationTitle("Today's Flight Status")
+        .navigationBarItems(
+            trailing: Toggle("Hide Past", isOn: $hidePast)
+        )
     }
 }
 
-#Preview {
-    FlightStatusBoard(flights: FlightData.generateTestFlights(date: Date()))
-        .environmentObject(FlightNavigationInfo())
-}
+    #Preview {
+        FlightStatusBoard(flights: FlightData.generateTestFlights(date: Date()))
+            .environmentObject(FlightNavigationInfo())
+    }
