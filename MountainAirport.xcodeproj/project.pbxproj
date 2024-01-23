@@ -15,6 +15,8 @@
 		6B15C5922B5FBC8D0057D003 /* FlightData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B15C5912B5FBC8D0057D003 /* FlightData.swift */; };
 		6B15C5942B5FBCA50057D003 /* FlightInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B15C5932B5FBCA40057D003 /* FlightInformation.swift */; };
 		6B15C5962B5FBCC50057D003 /* FlightHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B15C5952B5FBCC50057D003 /* FlightHistory.swift */; };
+		6B15C5982B5FBD6F0057D003 /* PurchasedFlights.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B15C5972B5FBD6F0057D003 /* PurchasedFlights.swift */; };
+		6B15C59A2B5FBD750057D003 /* SavedFlights.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B15C5992B5FBD750057D003 /* SavedFlights.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +29,8 @@
 		6B15C5912B5FBC8D0057D003 /* FlightData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlightData.swift; sourceTree = "<group>"; };
 		6B15C5932B5FBCA40057D003 /* FlightInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlightInformation.swift; sourceTree = "<group>"; };
 		6B15C5952B5FBCC50057D003 /* FlightHistory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlightHistory.swift; sourceTree = "<group>"; };
+		6B15C5972B5FBD6F0057D003 /* PurchasedFlights.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PurchasedFlights.swift; sourceTree = "<group>"; };
+		6B15C5992B5FBD750057D003 /* SavedFlights.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedFlights.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +87,8 @@
 				6B15C5912B5FBC8D0057D003 /* FlightData.swift */,
 				6B15C5932B5FBCA40057D003 /* FlightInformation.swift */,
 				6B15C5952B5FBCC50057D003 /* FlightHistory.swift */,
+				6B15C5972B5FBD6F0057D003 /* PurchasedFlights.swift */,
+				6B15C5992B5FBD750057D003 /* SavedFlights.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -158,10 +164,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				6B15C5832B5FBB720057D003 /* ContentView.swift in Sources */,
+				6B15C59A2B5FBD750057D003 /* SavedFlights.swift in Sources */,
 				6B15C5902B5FBC470057D003 /* AwardInformation.swift in Sources */,
 				6B15C5942B5FBCA50057D003 /* FlightInformation.swift in Sources */,
 				6B15C5812B5FBB720057D003 /* MountainAirportApp.swift in Sources */,
 				6B15C5962B5FBCC50057D003 /* FlightHistory.swift in Sources */,
+				6B15C5982B5FBD6F0057D003 /* PurchasedFlights.swift in Sources */,
 				6B15C5922B5FBC8D0057D003 /* FlightData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
