@@ -12,6 +12,9 @@
 		6B15C5852B5FBB740057D003 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B15C5842B5FBB740057D003 /* Assets.xcassets */; };
 		6B15C5882B5FBB740057D003 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B15C5872B5FBB740057D003 /* Preview Assets.xcassets */; };
 		6B15C5902B5FBC470057D003 /* AwardInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B15C58F2B5FBC470057D003 /* AwardInformation.swift */; };
+		6B15C5922B5FBC8D0057D003 /* FlightData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B15C5912B5FBC8D0057D003 /* FlightData.swift */; };
+		6B15C5942B5FBCA50057D003 /* FlightInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B15C5932B5FBCA40057D003 /* FlightInformation.swift */; };
+		6B15C5962B5FBCC50057D003 /* FlightHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B15C5952B5FBCC50057D003 /* FlightHistory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +24,9 @@
 		6B15C5842B5FBB740057D003 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6B15C5872B5FBB740057D003 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		6B15C58F2B5FBC470057D003 /* AwardInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AwardInformation.swift; sourceTree = "<group>"; };
+		6B15C5912B5FBC8D0057D003 /* FlightData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlightData.swift; sourceTree = "<group>"; };
+		6B15C5932B5FBCA40057D003 /* FlightInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlightInformation.swift; sourceTree = "<group>"; };
+		6B15C5952B5FBCC50057D003 /* FlightHistory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlightHistory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +80,9 @@
 			isa = PBXGroup;
 			children = (
 				6B15C58F2B5FBC470057D003 /* AwardInformation.swift */,
+				6B15C5912B5FBC8D0057D003 /* FlightData.swift */,
+				6B15C5932B5FBCA40057D003 /* FlightInformation.swift */,
+				6B15C5952B5FBCC50057D003 /* FlightHistory.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -150,7 +159,10 @@
 			files = (
 				6B15C5832B5FBB720057D003 /* ContentView.swift in Sources */,
 				6B15C5902B5FBC470057D003 /* AwardInformation.swift in Sources */,
+				6B15C5942B5FBCA50057D003 /* FlightInformation.swift in Sources */,
 				6B15C5812B5FBB720057D003 /* MountainAirportApp.swift in Sources */,
+				6B15C5962B5FBCC50057D003 /* FlightHistory.swift in Sources */,
+				6B15C5922B5FBC8D0057D003 /* FlightData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
