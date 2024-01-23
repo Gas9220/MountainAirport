@@ -33,6 +33,7 @@ struct FlightList: View {
 }
 
 struct FlightStatusBoard: View {
+    @AppStorage("FlightStatusCurrentTab") var selectedTab = 1
     @State private var hidePast = false
 
     var flights: [FlightInformation]
@@ -41,10 +42,17 @@ struct FlightStatusBoard: View {
         hidePast ? flights.filter { $0.localTime >= Date() } : flights
     }
 
+    var shortDateString: String {
+      let dateF = DateFormatter()
+      dateF.timeStyle = .none
+      dateF.dateFormat = "MMM d"
+      return dateF.string(from: Date())
+    }
+
     var flightToShow: FlightInformation?
 
     var body: some View {
-        TabView {
+        TabView(selection: $selectedTab) {
             FlightList(
                 flights: shownFlights.filter { $0.direction == .arrival }
             )
@@ -53,6 +61,9 @@ struct FlightStatusBoard: View {
                     .resizable()
                 Text("Arrivals")
             }
+            .badge(shownFlights.filter { $0.direction == .arrival }.count)
+            .tag(0)
+
             FlightList(
                 flights: shownFlights,
                 flightToShow: flightToShow
@@ -62,6 +73,9 @@ struct FlightStatusBoard: View {
                     .resizable()
                 Text("All")
             }
+            .badge(shortDateString)
+            .tag(1)
+
             FlightList(
                 flights: shownFlights.filter { $0.direction == .departure }
             )
@@ -69,11 +83,18 @@ struct FlightStatusBoard: View {
                 Image("ascending-airplane")
                 Text("Departures")
             }
+            .badge(shownFlights.filter { $0.direction == .departure }.count)
+            .tag(2)
         }
         .navigationTitle("Today's Flight Status")
         .navigationBarItems(
             trailing: Toggle("Hide Past", isOn: $hidePast)
         )
+        .onAppear {
+            if flightToShow != nil {
+                selectedTab = 1
+            }
+        }
     }
 }
 
