@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct FlightList: View {
+    @Binding var highlightedIds: [Int]
     var flights: [FlightInformation]
     var flightToShow: FlightInformation?
     @State private var path: [FlightInformation] = []
@@ -19,12 +20,22 @@ struct FlightList: View {
         return flight.id
     }
 
+    func rowHighLighted(_ flightId: Int) -> Bool {
+        return highlightedIds.contains { $0 == flightId }
+    }
+
     var body: some View {
         NavigationStack(path: $path) {
             ScrollViewReader { scrollProxy in
                 List(flights) { flight in
                     NavigationLink(value: flight) {
                         FlightRow(flight: flight)
+                    }
+                    .listRowBackground(
+                        rowHighLighted(flight.id) ? Color.yellow.opacity(0.5) : Color.clear
+                    )
+                    .swipeActions(edge: .leading) {
+                        HighlightActionView(flightId: flight.id, highlightedIds: $highlightedIds)
                     }
                 }
                 .onAppear {
@@ -49,7 +60,7 @@ struct FlightList_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack {
             FlightList(
-                flights: FlightData.generateTestFlights(date: Date())
+                highlightedIds: .constant([15]), flights: FlightData.generateTestFlights(date: Date())
             )
         }
         .environmentObject(FlightNavigationInfo())

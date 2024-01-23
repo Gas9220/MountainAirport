@@ -30,6 +30,7 @@
 		6B2CBDC02B5FF4E800FD38C7 /* SearchResultRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B2CBDBE2B5FF4E800FD38C7 /* SearchResultRow.swift */; };
 		6B2CBDC42B5FF77000FD38C7 /* DateFormatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B2CBDC22B5FF77000FD38C7 /* DateFormatters.swift */; };
 		6B2CBDC52B5FF77000FD38C7 /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B2CBDC32B5FF77000FD38C7 /* DateExtensions.swift */; };
+		6B2CBDC72B601E2600FD38C7 /* HighlightActionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B2CBDC62B601E2600FD38C7 /* HighlightActionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +58,7 @@
 		6B2CBDBE2B5FF4E800FD38C7 /* SearchResultRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultRow.swift; sourceTree = "<group>"; };
 		6B2CBDC22B5FF77000FD38C7 /* DateFormatters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateFormatters.swift; sourceTree = "<group>"; };
 		6B2CBDC32B5FF77000FD38C7 /* DateExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
+		6B2CBDC62B601E2600FD38C7 /* HighlightActionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighlightActionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +144,7 @@
 				6B2CBDB82B5FF13500FD38C7 /* FlightList.swift */,
 				6B2CBDB72B5FF13500FD38C7 /* FlightRow.swift */,
 				6B2CBDB62B5FF13500FD38C7 /* FlightStatusIcon.swift */,
+				6B2CBDC62B601E2600FD38C7 /* HighlightActionView.swift */,
 			);
 			path = FlightStatusBoard;
 			sourceTree = "<group>";
@@ -236,6 +239,7 @@
 			files = (
 				6B2CBDBA2B5FF13500FD38C7 /* FlightRow.swift in Sources */,
 				6B2CBDBF2B5FF4E800FD38C7 /* SearchFlights.swift in Sources */,
+				6B2CBDC72B601E2600FD38C7 /* HighlightActionView.swift in Sources */,
 				6B15C5A02B5FC3280057D003 /* FlightDetails.swift in Sources */,
 				6B15C5832B5FBB720057D003 /* ContentView.swift in Sources */,
 				6B15C59A2B5FBD750057D003 /* SavedFlights.swift in Sources */,
