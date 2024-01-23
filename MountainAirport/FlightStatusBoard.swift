@@ -8,11 +8,16 @@
 import SwiftUI
 
 struct FlightStatusBoard: View {
+    var flights: [FlightInformation]
+
     var body: some View {
-        Text("Hello, World!")
-    }
+        List(flights, id: \.id) { flight in
+            Text(flight.statusBoardName)
+        }
+        .navigationTitle("Today's Flight Status")
+     }
 }
 
 #Preview {
-    FlightStatusBoard()
+    FlightStatusBoard(flights: FlightData.generateTestFlights(date: Date()))
 }

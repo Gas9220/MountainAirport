@@ -42,7 +42,14 @@ struct WelcomeView: View {
             .listStyle(.plain)
             .navigationTitle("Mountain Airport")
         } detail: {
-            Text("Detail")
+            if let view = selectedView {
+                switch view {
+                case .showFlightStatus:
+                    FlightStatusBoard(flights: flightInfo.getDaysFlights(Date()))
+                }
+            } else {
+                Text("Select an option in the sidebar")
+            }
         }
 
     }
