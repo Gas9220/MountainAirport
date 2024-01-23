@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct FlightDetails: View {
+    @EnvironmentObject var lastFlightInfo: FlightNavigationInfo
     var flight: FlightInformation
     
     var body: some View {
@@ -30,15 +31,13 @@ struct FlightDetails: View {
                 .padding()
                 .navigationTitle("\(flight.airline) Flight \(flight.number)")
         }
+        .onAppear {
+            lastFlightInfo.lastFlightId = flight.id
+        }
     }
 }
 
-struct FlightDetails_Previews: PreviewProvider {
-    static var previews: some View {
-        NavigationView {
-            FlightDetails(
-                flight: FlightData.generateTestFlight(date: Date())
-            )
-        }
-    }
+#Preview {
+    FlightDetails(flight: FlightData.generateTestFlight(date: Date()))
+        .environmentObject(FlightNavigationInfo())
 }

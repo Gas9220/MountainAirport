@@ -37,4 +37,5 @@ struct FlightStatusBoard: View {
 
 #Preview {
     FlightStatusBoard(flights: FlightData.generateTestFlights(date: Date()))
+        .environmentObject(FlightNavigationInfo())
 }
