@@ -28,6 +28,8 @@
 		6B2CBDBB2B5FF13500FD38C7 /* FlightList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B2CBDB82B5FF13500FD38C7 /* FlightList.swift */; };
 		6B2CBDBF2B5FF4E800FD38C7 /* SearchFlights.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B2CBDBD2B5FF4E800FD38C7 /* SearchFlights.swift */; };
 		6B2CBDC02B5FF4E800FD38C7 /* SearchResultRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B2CBDBE2B5FF4E800FD38C7 /* SearchResultRow.swift */; };
+		6B2CBDC42B5FF77000FD38C7 /* DateFormatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B2CBDC22B5FF77000FD38C7 /* DateFormatters.swift */; };
+		6B2CBDC52B5FF77000FD38C7 /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B2CBDC32B5FF77000FD38C7 /* DateExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +55,8 @@
 		6B2CBDB82B5FF13500FD38C7 /* FlightList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlightList.swift; sourceTree = "<group>"; };
 		6B2CBDBD2B5FF4E800FD38C7 /* SearchFlights.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchFlights.swift; sourceTree = "<group>"; };
 		6B2CBDBE2B5FF4E800FD38C7 /* SearchResultRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultRow.swift; sourceTree = "<group>"; };
+		6B2CBDC22B5FF77000FD38C7 /* DateFormatters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateFormatters.swift; sourceTree = "<group>"; };
+		6B2CBDC32B5FF77000FD38C7 /* DateExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +93,7 @@
 				6B15C5822B5FBB720057D003 /* ContentView.swift */,
 				6B15C59B2B5FBE160057D003 /* WelcomeView.swift */,
 				6B2CBDB12B5FC55800FD38C7 /* WelcomeButtonView.swift */,
+				6B2CBDC12B5FF77000FD38C7 /* Misc */,
 				6B2CBDBC2B5FF4E800FD38C7 /* SearchFlights */,
 				6B2CBDB52B5FF12600FD38C7 /* FlightStatusBoard */,
 				6B15C59D2B5FC3280057D003 /* FlightDetails */,
@@ -148,6 +153,15 @@
 				6B2CBDBE2B5FF4E800FD38C7 /* SearchResultRow.swift */,
 			);
 			path = SearchFlights;
+			sourceTree = "<group>";
+		};
+		6B2CBDC12B5FF77000FD38C7 /* Misc */ = {
+			isa = PBXGroup;
+			children = (
+				6B2CBDC22B5FF77000FD38C7 /* DateFormatters.swift */,
+				6B2CBDC32B5FF77000FD38C7 /* DateExtensions.swift */,
+			);
+			path = Misc;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,8 +248,10 @@
 				6B15C5A32B5FC38D0057D003 /* FlightStatusBoard.swift in Sources */,
 				6B15C5962B5FBCC50057D003 /* FlightHistory.swift in Sources */,
 				6B2CBDBB2B5FF13500FD38C7 /* FlightList.swift in Sources */,
+				6B2CBDC52B5FF77000FD38C7 /* DateExtensions.swift in Sources */,
 				6B15C5982B5FBD6F0057D003 /* PurchasedFlights.swift in Sources */,
 				6B2CBDC02B5FF4E800FD38C7 /* SearchResultRow.swift in Sources */,
+				6B2CBDC42B5FF77000FD38C7 /* DateFormatters.swift in Sources */,
 				6B2CBDB42B5FCAC100FD38C7 /* FlightNavigationInfo.swift in Sources */,
 				6B2CBDB22B5FC55800FD38C7 /* WelcomeButtonView.swift in Sources */,
 				6B15C5922B5FBC8D0057D003 /* FlightData.swift in Sources */,
