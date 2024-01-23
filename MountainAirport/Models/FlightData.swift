@@ -67,7 +67,9 @@ class FlightData: ObservableObject {
             flights.append(contentsOf: generateFlights(startIndex: idx * 30, date: day, isFuture: idx > 0))
         }
 
-        return flights
+        return flights.sorted {
+            $0.localTime < $1.localTime
+        }
     }
 
     func generateFlights(startIndex: Int, date: Date, isFuture: Bool) -> [FlightInformation] {
@@ -198,6 +200,30 @@ class FlightData: ObservableObject {
             scheduledTime: scheduled,
             actualTime: newTime
         )
+    }
+
+    static func refreshFlights() async -> [FlightInformation] {
+        sleep(3) // Three seconds
+        return FlightData.generateTestFlights(date: Date())
+    }
+
+    static func searchFlightsForCity(_ city: String) async -> [FlightInformation] {
+        sleep(3) // Three seconds
+
+        let flights = FlightData().flights
+        guard !city.isEmpty else {
+            return flights
+        }
+
+        return flights.filter { $0.otherAirport.lowercased().contains(city.lowercased()) }
+    }
+
+    static func citiesContaining(_ text: String) -> [String] {
+        let cityArray = FlightData().flights.map { $0.otherAirport }
+        let matchingCities =
+        text.isEmpty ? cityArray : cityArray.filter { $0.contains(text) }
+        let citySet = Set(matchingCities)
+        return Array(citySet.sorted())
     }
 
     static func generateTestFlight(date: Date) -> FlightInformation {

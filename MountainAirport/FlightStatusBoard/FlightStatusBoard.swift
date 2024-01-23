@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct FlightStatusBoard: View {
-    var flights: [FlightInformation]
+    @State var flights: [FlightInformation]
     var flightToShow: FlightInformation?
     @State private var hidePast = false
     @AppStorage("FlightStatusCurrentTab") var selectedTab = 1
@@ -60,6 +60,9 @@ struct FlightStatusBoard: View {
                 if flightToShow != nil {
                     selectedTab = 1
                 }
+            }
+            .refreshable {
+                await flights = FlightData.refreshFlights()
             }
             .navigationTitle("Today's Flight Status")
             .navigationBarItems(

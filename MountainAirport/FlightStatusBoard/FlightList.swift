@@ -39,7 +39,7 @@ struct FlightList: View {
                     }
                 }
                 .onAppear {
-                    scrollProxy.scrollTo(nextFlightId, anchor: .center)
+                    scrollProxy.scrollTo(nextFlightId)
                 }
                 .navigationDestination(
                     for: FlightInformation.self,
