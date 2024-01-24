@@ -19,17 +19,20 @@ struct AwardsView: View {
         ]
     }
 
+    var activeAwards: [AwardInformation] {
+      awardArray.filter { $0.awarded }
+    }
+
+    var inactiveAwards: [AwardInformation] {
+      awardArray.filter { !$0.awarded }
+    }
+
     var body: some View {
         NavigationStack {
             ScrollView {
                 LazyVGrid(columns: awardColumns, spacing: 15) {
-                    ForEach(awardArray) { award in
-                        NavigationLink(value: award) {
-                            AwardCardView(award: award)
-                                .foregroundStyle(.black)
-                                .aspectRatio(0.67, contentMode: .fit)
-                        }
-                    }
+                    AwardGrid(title: "Awarded", awards: activeAwards)
+                    AwardGrid(title: "Not Awarded", awards: inactiveAwards)
                 }
                 .navigationDestination(for: AwardInformation.self) { award in
                     AwardDetails(award: award)

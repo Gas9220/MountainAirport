@@ -35,6 +35,7 @@
 		6B67820B2B61251600974B02 /* AwardCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B6782082B61251600974B02 /* AwardCardView.swift */; };
 		6B67820C2B61251600974B02 /* AwardDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B6782092B61251600974B02 /* AwardDetails.swift */; };
 		6B67820E2B61259F00974B02 /* AppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B67820D2B61259F00974B02 /* AppEnvironment.swift */; };
+		6B6782102B612E8700974B02 /* AwardGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B67820F2B612E8700974B02 /* AwardGrid.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,6 +68,7 @@
 		6B6782082B61251600974B02 /* AwardCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AwardCardView.swift; sourceTree = "<group>"; };
 		6B6782092B61251600974B02 /* AwardDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AwardDetails.swift; sourceTree = "<group>"; };
 		6B67820D2B61259F00974B02 /* AppEnvironment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppEnvironment.swift; sourceTree = "<group>"; };
+		6B67820F2B612E8700974B02 /* AwardGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AwardGrid.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +183,7 @@
 			isa = PBXGroup;
 			children = (
 				6B6782072B61251600974B02 /* AwardsView.swift */,
+				6B67820F2B612E8700974B02 /* AwardGrid.swift */,
 				6B6782082B61251600974B02 /* AwardCardView.swift */,
 				6B6782092B61251600974B02 /* AwardDetails.swift */,
 			);
@@ -278,6 +281,7 @@
 				6B15C5982B5FBD6F0057D003 /* PurchasedFlights.swift in Sources */,
 				6B2CBDC02B5FF4E800FD38C7 /* SearchResultRow.swift in Sources */,
 				6B67820C2B61251600974B02 /* AwardDetails.swift in Sources */,
+				6B6782102B612E8700974B02 /* AwardGrid.swift in Sources */,
 				6B67820E2B61259F00974B02 /* AppEnvironment.swift in Sources */,
 				6B2CBDC42B5FF77000FD38C7 /* DateFormatters.swift in Sources */,
 				6B2CBDB42B5FCAC100FD38C7 /* FlightNavigationInfo.swift in Sources */,
