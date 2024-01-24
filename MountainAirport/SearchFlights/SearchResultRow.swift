@@ -31,7 +31,7 @@ struct SearchResultRow: View {
                 print("Modal dismissed. State now: \(isPresented)")
             },
             content: {
-                FlightSearchDetails(flight: flight)
+                FlightSearchDetails(showModal: $isPresented, flight: flight)
             }
         )
     }
