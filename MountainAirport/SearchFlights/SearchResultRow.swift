@@ -9,6 +9,7 @@ import SwiftUI
 
 struct SearchResultRow: View {
     var flight: FlightInformation
+    @State private var isPresented = false
 
     var timeFormatter: DateFormatter {
         let tdf = DateFormatter()
@@ -18,20 +19,21 @@ struct SearchResultRow: View {
     }
 
     var body: some View {
-        HStack {
-            FlightStatusIcon(flight: flight)
-                .padding(5)
-                .clipShape(RoundedRectangle(cornerRadius: 7.0))
-            VStack(alignment: .leading) {
-                Text(flight.flightName)
-                    .font(.title3) +
-                Text(" \(flight.dirString) \(flight.otherAirport)")
-                HStack {
-                    Text(flight.localTime, formatter: timeFormatter)
-                        .foregroundColor(.gray)
-                }
+        Button(
+            action: {
+                isPresented.toggle()
+            }, label: {
+                FlightSearchSummary(flight: flight)
+            })
+        .sheet(
+            isPresented: $isPresented,
+            onDismiss: {
+                print("Modal dismissed. State now: \(isPresented)")
+            },
+            content: {
+                FlightSearchDetails(flight: flight)
             }
-        }
+        )
     }
 }
 
