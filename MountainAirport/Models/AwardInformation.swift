@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct AwardInformation {
-    public var awardView: AnyView
+    public var imageName: String
     public var title: String
     public var description: String
     public var awarded: Bool
@@ -27,5 +27,11 @@ extension AwardInformation: Hashable {
         hasher.combine(title)
         hasher.combine(description)
         hasher.combine(awarded)
+    }
+}
+
+extension AwardInformation: Identifiable {
+    public var id: Int {
+        self.hashValue
     }
 }
