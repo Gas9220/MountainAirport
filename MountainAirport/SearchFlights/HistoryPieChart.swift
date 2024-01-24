@@ -51,27 +51,41 @@ struct HistoryPieChart: View {
     }
 
     var body: some View {
-        GeometryReader { proxy in
-            let radius = min(proxy.size.width, proxy.size.height) / 2.0
-            let center = CGPoint(x: proxy.size.width / 2.0, y: proxy.size.height / 2.0)
-            var startAngle = 360.0
+        HStack {
+            GeometryReader { proxy in
+                let radius = min(proxy.size.width, proxy.size.height) / 2.0
+                let center = CGPoint(x: proxy.size.width / 2.0, y: proxy.size.height / 2.0)
+                var startAngle = 360.0
 
-            ForEach(pieElements) { segment in
-                let endAngle = startAngle - segment.fraction * 360.0
+                ForEach(pieElements) { segment in
+                    let endAngle = startAngle - segment.fraction * 360.0
 
-                Path { pieChart in
-                    pieChart.move(to: center)
-                    pieChart.addArc(
-                        center: center,
-                        radius: radius,
-                        startAngle: .degrees(startAngle),
-                        endAngle: .degrees(endAngle),
-                        clockwise: true
-                    )
-                    pieChart.closeSubpath()
-                    startAngle = endAngle
+                    Path { pieChart in
+                        pieChart.move(to: center)
+                        pieChart.addArc(
+                            center: center,
+                            radius: radius,
+                            startAngle: .degrees(startAngle),
+                            endAngle: .degrees(endAngle),
+                            clockwise: true
+                        )
+                        pieChart.closeSubpath()
+                        startAngle = endAngle
+                    }
+                    .foregroundStyle(segment.color)
+                    .rotationEffect(.degrees(-90))
                 }
-                .foregroundColor(segment.color)
+            }
+
+            VStack(alignment: .leading) {
+                ForEach(pieElements) { segment in
+                    HStack {
+                        Rectangle()
+                            .frame(width: 20, height: 20)
+                            .foregroundStyle(segment.color)
+                        Text(segment.name)
+                    }
+                }
             }
         }
     }

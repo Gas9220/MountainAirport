@@ -30,6 +30,12 @@ struct FlightTimeHistory: View {
                 Text("On Time History for \(flight.statusBoardName)")
                     .font(.title2)
                     .padding(.top, 30)
+                
+                HistoryPieChart(flightHistory: flight.history)
+                    .font(.footnote)
+                    .frame(width: 250, height: 250)
+                    .padding(5)
+
                 ScrollView {
                     ForEach(flight.history, id: \.day) { history in
                         HStack {
