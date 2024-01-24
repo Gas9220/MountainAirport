@@ -9,9 +9,12 @@ import SwiftUI
 
 struct FlightSearchDetails: View {
     @Binding var showModal: Bool
-
+    @State private var rebookAlert = false
     var flight: FlightInformation
     @EnvironmentObject var lastFlightInfo: AppEnvironment
+
+    @State private var phone = ""
+    @State private var password = ""
 
     var body: some View {
         ZStack {
@@ -26,6 +29,27 @@ struct FlightSearchDetails: View {
                         showModal = false
                     }
                 }
+
+                if flight.status == .canceled {
+                    Button("Rebook Flight") {
+                        rebookAlert = true
+                    }
+                    .alert("Contact your airline", isPresented: $rebookAlert) {
+                        TextField("Phone", text: $phone)
+                            .textContentType(.telephoneNumber)
+                        SecureField("Password", text: $password)
+                            .textContentType(.password)
+                        Button("Call Me") {
+                        }
+                        Button("Cancel", role: .cancel) {
+                        }
+                    } message: {
+                        Text("We cannot rebook this flight.") +
+                        Text("Please enter your phone number and confirm your password.")
+                    }
+                }
+
+
                 FlightInfoPanel(flight: flight)
                     .padding()
                     .background(
