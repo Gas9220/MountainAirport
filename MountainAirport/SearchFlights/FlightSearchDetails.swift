@@ -18,6 +18,7 @@ struct FlightSearchDetails: View {
 
     @State private var checkInFlight: CheckInInfo?
     @State private var showCheckIn = false
+    @State private var showFlightHistory = false
 
     var body: some View {
         ZStack {
@@ -75,6 +76,13 @@ struct FlightSearchDetails: View {
                         Text("Check in for \(checkIn.airline)" +
                              "Flight \(checkIn.flight)")
                     }
+                }
+
+                Button("On-Time History") {
+                    showFlightHistory.toggle()
+                }
+                .popover(isPresented: $showFlightHistory, arrowEdge: .top) {
+                    FlightTimeHistory(flight: flight)
                 }
 
                 FlightInfoPanel(flight: flight)
