@@ -44,6 +44,7 @@
 		6B6782202B614D7A00974B02 /* FlightTimeHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B67821F2B614D7A00974B02 /* FlightTimeHistory.swift */; };
 		6B6782222B614FE500974B02 /* TerminalMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B6782212B614FE500974B02 /* TerminalMapView.swift */; };
 		6B6782242B61513600974B02 /* TerminalStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B6782232B61513600974B02 /* TerminalStore.swift */; };
+		6B6782262B61825E00974B02 /* HistoryPieChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B6782252B61825E00974B02 /* HistoryPieChart.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -85,6 +86,7 @@
 		6B67821F2B614D7A00974B02 /* FlightTimeHistory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlightTimeHistory.swift; sourceTree = "<group>"; };
 		6B6782212B614FE500974B02 /* TerminalMapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TerminalMapView.swift; sourceTree = "<group>"; };
 		6B6782232B61513600974B02 /* TerminalStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TerminalStore.swift; sourceTree = "<group>"; };
+		6B6782252B61825E00974B02 /* HistoryPieChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryPieChart.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,6 +192,7 @@
 				6B6782162B61362E00974B02 /* FlightSearchDetails.swift */,
 				6B6782152B61362E00974B02 /* FlightSearchSummary.swift */,
 				6B67821F2B614D7A00974B02 /* FlightTimeHistory.swift */,
+				6B6782252B61825E00974B02 /* HistoryPieChart.swift */,
 			);
 			path = SearchFlights;
 			sourceTree = "<group>";
@@ -314,6 +317,7 @@
 				6B6782132B6131BA00974B02 /* FlightDetailHeader.swift in Sources */,
 				6B2CBDB22B5FC55800FD38C7 /* WelcomeButtonView.swift in Sources */,
 				6B6782242B61513600974B02 /* TerminalStore.swift in Sources */,
+				6B6782262B61825E00974B02 /* HistoryPieChart.swift in Sources */,
 				6B6782182B61362E00974B02 /* FlightSearchDetails.swift in Sources */,
 				6B6782172B61362E00974B02 /* FlightSearchSummary.swift in Sources */,
 				6B6782202B614D7A00974B02 /* FlightTimeHistory.swift in Sources */,
