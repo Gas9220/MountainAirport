@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		6B15C5812B5FBB720057D003 /* MountainAirportApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B15C5802B5FBB720057D003 /* MountainAirportApp.swift */; };
-		6B15C5832B5FBB720057D003 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B15C5822B5FBB720057D003 /* ContentView.swift */; };
 		6B15C5852B5FBB740057D003 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B15C5842B5FBB740057D003 /* Assets.xcassets */; };
 		6B15C5882B5FBB740057D003 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B15C5872B5FBB740057D003 /* Preview Assets.xcassets */; };
 		6B15C5902B5FBC470057D003 /* AwardInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B15C58F2B5FBC470057D003 /* AwardInformation.swift */; };
@@ -19,7 +18,6 @@
 		6B15C59A2B5FBD750057D003 /* SavedFlights.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B15C5992B5FBD750057D003 /* SavedFlights.swift */; };
 		6B15C59C2B5FBE160057D003 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B15C59B2B5FBE160057D003 /* WelcomeView.swift */; };
 		6B15C5A02B5FC3280057D003 /* FlightDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B15C59E2B5FC3280057D003 /* FlightDetails.swift */; };
-		6B15C5A12B5FC3280057D003 /* FlightDirectionGraphic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B15C59F2B5FC3280057D003 /* FlightDirectionGraphic.swift */; };
 		6B15C5A32B5FC38D0057D003 /* FlightStatusBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B15C5A22B5FC38D0057D003 /* FlightStatusBoard.swift */; };
 		6B2CBDB22B5FC55800FD38C7 /* WelcomeButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B2CBDB12B5FC55800FD38C7 /* WelcomeButtonView.swift */; };
 		6B2CBDB42B5FCAC100FD38C7 /* FlightNavigationInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B2CBDB32B5FCAC100FD38C7 /* FlightNavigationInfo.swift */; };
@@ -36,12 +34,13 @@
 		6B67820C2B61251600974B02 /* AwardDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B6782092B61251600974B02 /* AwardDetails.swift */; };
 		6B67820E2B61259F00974B02 /* AppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B67820D2B61259F00974B02 /* AppEnvironment.swift */; };
 		6B6782102B612E8700974B02 /* AwardGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B67820F2B612E8700974B02 /* AwardGrid.swift */; };
+		6B6782132B6131BA00974B02 /* FlightDetailHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B6782112B6131BA00974B02 /* FlightDetailHeader.swift */; };
+		6B6782142B6131BA00974B02 /* FlightInfoPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B6782122B6131BA00974B02 /* FlightInfoPanel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		6B15C57D2B5FBB720057D003 /* MountainAirport.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MountainAirport.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B15C5802B5FBB720057D003 /* MountainAirportApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MountainAirportApp.swift; sourceTree = "<group>"; };
-		6B15C5822B5FBB720057D003 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		6B15C5842B5FBB740057D003 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6B15C5872B5FBB740057D003 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		6B15C58F2B5FBC470057D003 /* AwardInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AwardInformation.swift; sourceTree = "<group>"; };
@@ -52,7 +51,6 @@
 		6B15C5992B5FBD750057D003 /* SavedFlights.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedFlights.swift; sourceTree = "<group>"; };
 		6B15C59B2B5FBE160057D003 /* WelcomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		6B15C59E2B5FC3280057D003 /* FlightDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlightDetails.swift; sourceTree = "<group>"; };
-		6B15C59F2B5FC3280057D003 /* FlightDirectionGraphic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlightDirectionGraphic.swift; sourceTree = "<group>"; };
 		6B15C5A22B5FC38D0057D003 /* FlightStatusBoard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlightStatusBoard.swift; sourceTree = "<group>"; };
 		6B2CBDB12B5FC55800FD38C7 /* WelcomeButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeButtonView.swift; sourceTree = "<group>"; };
 		6B2CBDB32B5FCAC100FD38C7 /* FlightNavigationInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightNavigationInfo.swift; sourceTree = "<group>"; };
@@ -69,6 +67,8 @@
 		6B6782092B61251600974B02 /* AwardDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AwardDetails.swift; sourceTree = "<group>"; };
 		6B67820D2B61259F00974B02 /* AppEnvironment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppEnvironment.swift; sourceTree = "<group>"; };
 		6B67820F2B612E8700974B02 /* AwardGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AwardGrid.swift; sourceTree = "<group>"; };
+		6B6782112B6131BA00974B02 /* FlightDetailHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlightDetailHeader.swift; sourceTree = "<group>"; };
+		6B6782122B6131BA00974B02 /* FlightInfoPanel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlightInfoPanel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,14 +102,13 @@
 			isa = PBXGroup;
 			children = (
 				6B15C5802B5FBB720057D003 /* MountainAirportApp.swift */,
-				6B15C5822B5FBB720057D003 /* ContentView.swift */,
 				6B15C59B2B5FBE160057D003 /* WelcomeView.swift */,
 				6B2CBDB12B5FC55800FD38C7 /* WelcomeButtonView.swift */,
-				6B6782062B61251600974B02 /* AwardsView */,
 				6B2CBDC12B5FF77000FD38C7 /* Misc */,
-				6B2CBDBC2B5FF4E800FD38C7 /* SearchFlights */,
-				6B2CBDB52B5FF12600FD38C7 /* FlightStatusBoard */,
 				6B15C59D2B5FC3280057D003 /* FlightDetails */,
+				6B2CBDB52B5FF12600FD38C7 /* FlightStatusBoard */,
+				6B6782062B61251600974B02 /* AwardsView */,
+				6B2CBDBC2B5FF4E800FD38C7 /* SearchFlights */,
 				6B15C58E2B5FBC2B0057D003 /* Models */,
 				6B15C5842B5FBB740057D003 /* Assets.xcassets */,
 				6B15C5862B5FBB740057D003 /* Preview Content */,
@@ -144,7 +143,8 @@
 			isa = PBXGroup;
 			children = (
 				6B15C59E2B5FC3280057D003 /* FlightDetails.swift */,
-				6B15C59F2B5FC3280057D003 /* FlightDirectionGraphic.swift */,
+				6B6782112B6131BA00974B02 /* FlightDetailHeader.swift */,
+				6B6782122B6131BA00974B02 /* FlightInfoPanel.swift */,
 			);
 			path = FlightDetails;
 			sourceTree = "<group>";
@@ -173,8 +173,8 @@
 		6B2CBDC12B5FF77000FD38C7 /* Misc */ = {
 			isa = PBXGroup;
 			children = (
-				6B2CBDC22B5FF77000FD38C7 /* DateFormatters.swift */,
 				6B2CBDC32B5FF77000FD38C7 /* DateExtensions.swift */,
+				6B2CBDC22B5FF77000FD38C7 /* DateFormatters.swift */,
 			);
 			path = Misc;
 			sourceTree = "<group>";
@@ -264,18 +264,17 @@
 				6B2CBDBF2B5FF4E800FD38C7 /* SearchFlights.swift in Sources */,
 				6B2CBDC72B601E2600FD38C7 /* HighlightActionView.swift in Sources */,
 				6B15C5A02B5FC3280057D003 /* FlightDetails.swift in Sources */,
-				6B15C5832B5FBB720057D003 /* ContentView.swift in Sources */,
 				6B15C59A2B5FBD750057D003 /* SavedFlights.swift in Sources */,
 				6B15C5902B5FBC470057D003 /* AwardInformation.swift in Sources */,
 				6B67820A2B61251600974B02 /* AwardsView.swift in Sources */,
 				6B2CBDB92B5FF13500FD38C7 /* FlightStatusIcon.swift in Sources */,
-				6B15C5A12B5FC3280057D003 /* FlightDirectionGraphic.swift in Sources */,
 				6B67820B2B61251600974B02 /* AwardCardView.swift in Sources */,
 				6B15C5942B5FBCA50057D003 /* FlightInformation.swift in Sources */,
 				6B15C59C2B5FBE160057D003 /* WelcomeView.swift in Sources */,
 				6B15C5812B5FBB720057D003 /* MountainAirportApp.swift in Sources */,
 				6B15C5A32B5FC38D0057D003 /* FlightStatusBoard.swift in Sources */,
 				6B15C5962B5FBCC50057D003 /* FlightHistory.swift in Sources */,
+				6B6782142B6131BA00974B02 /* FlightInfoPanel.swift in Sources */,
 				6B2CBDBB2B5FF13500FD38C7 /* FlightList.swift in Sources */,
 				6B2CBDC52B5FF77000FD38C7 /* DateExtensions.swift in Sources */,
 				6B15C5982B5FBD6F0057D003 /* PurchasedFlights.swift in Sources */,
@@ -285,6 +284,7 @@
 				6B67820E2B61259F00974B02 /* AppEnvironment.swift in Sources */,
 				6B2CBDC42B5FF77000FD38C7 /* DateFormatters.swift in Sources */,
 				6B2CBDB42B5FCAC100FD38C7 /* FlightNavigationInfo.swift in Sources */,
+				6B6782132B6131BA00974B02 /* FlightDetailHeader.swift in Sources */,
 				6B2CBDB22B5FC55800FD38C7 /* WelcomeButtonView.swift in Sources */,
 				6B15C5922B5FBC8D0057D003 /* FlightData.swift in Sources */,
 			);

@@ -20,41 +20,47 @@ struct FlightStatusBoard: View {
         flights
     }
 
+    func lastUpdateString(_ date: Date) -> String {
+        let dateF = DateFormatter()
+        dateF.timeStyle = .short
+        dateF.dateFormat = .none
+        return "Last updated: \(dateF.string(from: Date()))"
+    }
+
     var body: some View {
-        TimelineView(.everyMinute) { context in
+        TimelineView(.animation) { context in
             VStack {
                 Text(lastUpdateString(context.date))
                     .font(.footnote)
-                
                 TabView(selection: $selectedTab) {
                     FlightList(
-                        highlightedIds: $highlightedIds, flights: shownFlights.filter { $0.direction == .arrival }
-                    )
-                    .tabItem {
+                        flights: shownFlights.filter { $0.direction == .arrival },
+                        highlightedIds: $highlightedIds
+                    ).tabItem {
                         Image("descending-airplane")
                             .resizable()
                         Text("Arrivals")
                     }
+                    .badge(shownFlights.filter { $0.direction == .arrival }.count)
                     .tag(0)
                     FlightList(
-                        highlightedIds: $highlightedIds,
                         flights: shownFlights,
-                        flightToShow: flightToShow
-                    )
-                    .tabItem {
+                        flightToShow: flightToShow,
+                        highlightedIds: $highlightedIds
+                    ).tabItem {
                         Image(systemName: "airplane")
                             .resizable()
                         Text("All")
                     }
                     .tag(1)
                     FlightList(
-                        highlightedIds: $highlightedIds,
-                        flights: shownFlights.filter { $0.direction == .departure }
-                    )
-                    .tabItem {
+                        flights: shownFlights.filter { $0.direction == .departure },
+                        highlightedIds: $highlightedIds
+                    ).tabItem {
                         Image("ascending-airplane")
                         Text("Departures")
                     }
+                    .badge(shownFlights.filter { $0.direction == .departure }.count)
                     .tag(2)
                 }
                 .onAppear {
@@ -65,22 +71,20 @@ struct FlightStatusBoard: View {
                 .refreshable {
                     await flights = FlightData.refreshFlights()
                 }
-                .navigationTitle("Today's Flight Status")
+                .navigationTitle("Flight Status")
                 .navigationBarItems(
-                    trailing: Toggle("Hide Past", isOn: $hidePast)
-            )
+                    trailing: Toggle(
+                        "Hide Past",
+                        isOn: $hidePast
+                    )
+                )
             }
         }
     }
-
-    func lastUpdateString(_ date: Date) -> String {
-        let dateF = DateFormatter()
-        dateF.timeStyle = .short
-        dateF.dateFormat = .none
-        return "Last updated: \(dateF.string(from: Date()))"
-    }
 }
+
 #Preview {
-    FlightStatusBoard(flights: FlightData.generateTestFlights(date: Date()))
-        .environmentObject(FlightNavigationInfo())
+    NavigationStack {
+        FlightStatusBoard(flights: FlightData.generateTestFlights(date: Date()))
+    }
 }
