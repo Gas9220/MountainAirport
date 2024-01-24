@@ -16,6 +16,9 @@ struct FlightSearchDetails: View {
     @State private var phone = ""
     @State private var password = ""
 
+    @State private var checkInFlight: CheckInInfo?
+    @State private var showCheckIn = false
+
     var body: some View {
         ZStack {
             Image("background-view")
@@ -49,6 +52,30 @@ struct FlightSearchDetails: View {
                     }
                 }
 
+                if flight.isCheckInAvailable {
+                    Button("Check In for Flight") {
+                        checkInFlight = CheckInInfo(airline: flight.airline, flight: flight.number)
+                        showCheckIn = true
+                    }
+                    .confirmationDialog(
+                        "Check In",
+                        isPresented: $showCheckIn,
+                        presenting: checkInFlight
+                    ) { checkIn in
+                        Button("Check In") {
+                            print(
+                                "Check-in for \(checkIn.airline) \(checkIn.flight)."
+                            )
+                        }
+                        Button("Reschedule", role: .destructive) {
+                            print("Reschedule flight.")
+                        }
+                        Button("Not Now", role: .cancel) { }
+                    } message: { checkIn in
+                        Text("Check in for \(checkIn.airline)" +
+                             "Flight \(checkIn.flight)")
+                    }
+                }
 
                 FlightInfoPanel(flight: flight)
                     .padding()
