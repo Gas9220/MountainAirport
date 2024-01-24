@@ -9,8 +9,9 @@ import SwiftUI
 
 struct FlightDetails: View {
     var flight: FlightInformation
+    @State private var showTerminalInfo = false
     @EnvironmentObject var lastFlightInfo: AppEnvironment
-    
+
     var body: some View {
         ZStack {
             Image("background-view")
@@ -25,11 +26,26 @@ struct FlightDetails: View {
                             .opacity(0.3)
                     )
                 Spacer()
-            }.foregroundColor(.white)
-                .padding()
-                .navigationTitle("\(flight.airline) Flight \(flight.number)")
-        }.onAppear {
+            }
+            .foregroundStyle(.white)
+            .padding()
+            .navigationTitle("\(flight.airline) Flight \(flight.number)")
+        }
+        .onTapGesture {
+            showTerminalInfo.toggle()
+        }
+        .onAppear {
             lastFlightInfo.lastFlightId = flight.id
+        }
+        .sheet(isPresented: $showTerminalInfo) {
+            Group {
+                if flight.gate.hasPrefix("A") {
+                    TerminalAView()
+                } else {
+                    TerminalBView()
+                }
+            }
+            .presentationDetents([.medium, .large])
         }
     }
 }
