@@ -34,8 +34,7 @@ struct FlightStatusBoard: View {
                     .font(.footnote)
                 TabView(selection: $selectedTab) {
                     FlightList(
-                        flights: shownFlights.filter { $0.direction == .arrival },
-                        highlightedIds: $highlightedIds
+                        flights: shownFlights.filter { $0.direction == .arrival }, highlightedIds: $highlightedIds
                     ).tabItem {
                         Image("descending-airplane")
                             .resizable()

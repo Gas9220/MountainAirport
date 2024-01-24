@@ -17,7 +17,8 @@ class AppEnvironment: ObservableObject {
                 imageName: "first-visit-award",
                 title: "First Visit",
                 description: "Awarded the first time you open the app while at the airport.",
-                awarded: true
+                awarded: true,
+                stars: 1
             )
         )
         awardList.append(
@@ -25,7 +26,8 @@ class AppEnvironment: ObservableObject {
                 imageName: "overnight-award",
                 title: "Left Car Overnight",
                 description: "You left you car parked overnight in one of our parking lots.",
-                awarded: true
+                awarded: true,
+                stars: 2
             )
         )
         awardList.append(
@@ -33,7 +35,8 @@ class AppEnvironment: ObservableObject {
                 imageName: "meal-award",
                 title: "Meal at Airport",
                 description: "You used the app to receive a discount at one of our restaurants.",
-                awarded: false
+                awarded: false,
+                stars: 2
             )
         )
         awardList.append(
@@ -41,7 +44,8 @@ class AppEnvironment: ObservableObject {
                 imageName: "first-flight-award",
                 title: "First Flight",
                 description: "You checked in for a flight using the app for the first time.",
-                awarded: true
+                awarded: true,
+                stars: 3
             )
         )
         awardList.append(
@@ -49,7 +53,8 @@ class AppEnvironment: ObservableObject {
                 imageName: "shopping-award",
                 title: "Almost Duty Free",
                 description: "You used the app to receive a discount at one of our vendors.",
-                awarded: true
+                awarded: true,
+                stars: 2
             )
         )
         awardList.append(
@@ -57,7 +62,8 @@ class AppEnvironment: ObservableObject {
                 imageName: "rainy-day-award",
                 title: "Rainy Day",
                 description: "You flight was delayed because of weather.",
-                awarded: false
+                awarded: false,
+                stars: 3
             )
         )
         awardList.append(
@@ -65,7 +71,9 @@ class AppEnvironment: ObservableObject {
                 imageName: "return-home-award",
                 title: "Welcome Home",
                 description: "Your returned to the airport after leaving from it.",
-                awarded: true
+                awarded: true,
+                stars: 2
             )
         )
-    }}
+    }
+}

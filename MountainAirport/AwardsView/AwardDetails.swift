@@ -40,14 +40,16 @@ struct AwardDetails_Previews: PreviewProvider {
             imageName: "first-visit-award",
             title: "First Visit",
             description: "Awarded the first time you open the app while at the airport.",
-            awarded: true
+            awarded: true,
+            stars: 2
         )
 
         let award2 = AwardInformation(
             imageName: "rainy-day-award",
             title: "Rainy Day",
             description: "Your flight was delayed because of weather.",
-            awarded: false
+            awarded: false,
+            stars: 3
         )
 
         Group {
