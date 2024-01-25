@@ -26,30 +26,22 @@ struct FlightTimeHistory: View {
             Image("background-view")
                 .resizable()
                 .aspectRatio(contentMode: .fill)
+                .ignoresSafeArea()
             VStack {
                 Text("On Time History for \(flight.statusBoardName)")
                     .font(.title2)
                     .padding(.top, 30)
-                
-                HistoryPieChart(flightHistory: flight.history)
-                    .font(.footnote)
-                    .frame(width: 250, height: 250)
-                    .padding(5)
-
                 ScrollView {
-                    ForEach(flight.history, id: \.day) { history in
-                        HStack {
-                            Text("\(history.day) day(s) ago - \(history.flightDelayDescription)")
-                                .padding()
-                            Spacer()
-                        }
-                        .background(
-                            Color.white.opacity(0.2)
-                        )
-                    }
+                    HistoryChartView(flightHistory: flight.history)
+                        .frame(height: 600)
+                    HistoryPieChart(flightHistory: flight.history)
+                        .font(.footnote)
+                        .frame(width: 250, height: 250)
+                        .padding(5)
                 }
             }
-        }.foregroundColor(.white)
+        }
+        .foregroundColor(.white)
     }
 }
 

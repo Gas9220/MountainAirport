@@ -49,6 +49,9 @@
 		6BDF1C232B6252E100D32146 /* TerminalStoresView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BDF1C222B6252E100D32146 /* TerminalStoresView.swift */; };
 		6BDF1C252B6254FB00D32146 /* GatePathView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BDF1C242B6254FB00D32146 /* GatePathView.swift */; };
 		6BDF1C272B6256FD00D32146 /* WelcomeAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BDF1C262B6256FD00D32146 /* WelcomeAnimation.swift */; };
+		6BDF1C292B62687400D32146 /* HistoryChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BDF1C282B62687400D32146 /* HistoryChartView.swift */; };
+		6BDF1C2D2B627A4B00D32146 /* FlightTimelineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BDF1C2B2B627A4B00D32146 /* FlightTimelineView.swift */; };
+		6BDF1C2E2B627A4B00D32146 /* FlightCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BDF1C2C2B627A4B00D32146 /* FlightCardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -95,6 +98,9 @@
 		6BDF1C222B6252E100D32146 /* TerminalStoresView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TerminalStoresView.swift; sourceTree = "<group>"; };
 		6BDF1C242B6254FB00D32146 /* GatePathView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GatePathView.swift; sourceTree = "<group>"; };
 		6BDF1C262B6256FD00D32146 /* WelcomeAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeAnimation.swift; sourceTree = "<group>"; };
+		6BDF1C282B62687400D32146 /* HistoryChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryChartView.swift; sourceTree = "<group>"; };
+		6BDF1C2B2B627A4B00D32146 /* FlightTimelineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlightTimelineView.swift; sourceTree = "<group>"; };
+		6BDF1C2C2B627A4B00D32146 /* FlightCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlightCardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +143,7 @@
 				6B6782062B61251600974B02 /* AwardsView */,
 				6B2CBDBC2B5FF4E800FD38C7 /* SearchFlights */,
 				6B15C58E2B5FBC2B0057D003 /* Models */,
+				6BDF1C2A2B627A4B00D32146 /* Timeline */,
 				6B15C5842B5FBB740057D003 /* Assets.xcassets */,
 				6B15C5862B5FBB740057D003 /* Preview Content */,
 			);
@@ -204,6 +211,7 @@
 				6B6782152B61362E00974B02 /* FlightSearchSummary.swift */,
 				6B67821F2B614D7A00974B02 /* FlightTimeHistory.swift */,
 				6B6782252B61825E00974B02 /* HistoryPieChart.swift */,
+				6BDF1C282B62687400D32146 /* HistoryChartView.swift */,
 			);
 			path = SearchFlights;
 			sourceTree = "<group>";
@@ -227,6 +235,15 @@
 				6B6782272B61852900974B02 /* AwardStar.swift */,
 			);
 			path = AwardsView;
+			sourceTree = "<group>";
+		};
+		6BDF1C2A2B627A4B00D32146 /* Timeline */ = {
+			isa = PBXGroup;
+			children = (
+				6BDF1C2B2B627A4B00D32146 /* FlightTimelineView.swift */,
+				6BDF1C2C2B627A4B00D32146 /* FlightCardView.swift */,
+			);
+			path = Timeline;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -312,6 +329,7 @@
 				6B67821B2B6138E700974B02 /* TerminalBView.swift in Sources */,
 				6B2CBDB92B5FF13500FD38C7 /* FlightStatusIcon.swift in Sources */,
 				6B6782222B614FE500974B02 /* TerminalMapView.swift in Sources */,
+				6BDF1C2E2B627A4B00D32146 /* FlightCardView.swift in Sources */,
 				6B67820B2B61251600974B02 /* AwardCardView.swift in Sources */,
 				6B15C5942B5FBCA50057D003 /* FlightInformation.swift in Sources */,
 				6B15C59C2B5FBE160057D003 /* WelcomeView.swift in Sources */,
@@ -320,6 +338,7 @@
 				6B15C5A32B5FC38D0057D003 /* FlightStatusBoard.swift in Sources */,
 				6B15C5962B5FBCC50057D003 /* FlightHistory.swift in Sources */,
 				6B6782142B6131BA00974B02 /* FlightInfoPanel.swift in Sources */,
+				6BDF1C2D2B627A4B00D32146 /* FlightTimelineView.swift in Sources */,
 				6B2CBDBB2B5FF13500FD38C7 /* FlightList.swift in Sources */,
 				6B2CBDC52B5FF77000FD38C7 /* DateExtensions.swift in Sources */,
 				6B15C5982B5FBD6F0057D003 /* PurchasedFlights.swift in Sources */,
@@ -332,6 +351,7 @@
 				6B2CBDB42B5FCAC100FD38C7 /* FlightNavigationInfo.swift in Sources */,
 				6B6782132B6131BA00974B02 /* FlightDetailHeader.swift in Sources */,
 				6B2CBDB22B5FC55800FD38C7 /* WelcomeButtonView.swift in Sources */,
+				6BDF1C292B62687400D32146 /* HistoryChartView.swift in Sources */,
 				6B6782242B61513600974B02 /* TerminalStore.swift in Sources */,
 				6B6782262B61825E00974B02 /* HistoryPieChart.swift in Sources */,
 				6B6782182B61362E00974B02 /* FlightSearchDetails.swift in Sources */,
