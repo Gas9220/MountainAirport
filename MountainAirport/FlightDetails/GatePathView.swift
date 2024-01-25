@@ -9,6 +9,12 @@ import SwiftUI
 
 struct GatePathView: View {
     var flight: FlightInformation
+    @State private var showPath = false
+    
+    var walkingAnimation: Animation {
+        .linear(duration: 3.0)
+        .repeatForever(autoreverses: false)
+    }
 
     let gateAPaths = [
         [
@@ -94,12 +100,13 @@ struct GatePathView: View {
 
     var body: some View {
         GeometryReader { proxy in
-            Path { path in
-                let walkingPath = gatePath(proxy)
-                guard walkingPath.count > 1 else { return }
-                path.addLines(walkingPath)
-            }
-            .stroke(lineWidth: 3.0)
+        WalkPath(points: gatePath(proxy))
+                .trim(to: showPath ? 1.0 : 0.0)
+                .stroke(lineWidth: 3.0)
+                .animation(walkingAnimation, value: showPath)
+        }
+        .onAppear {
+            showPath = true
         }
     }
 }
@@ -121,6 +128,17 @@ struct FlightTerminalMap_Previews: PreviewProvider {
         Group {
             GatePathView(flight: testGateA)
             GatePathView(flight: testGateB)
+        }
+    }
+}
+
+struct WalkPath: Shape {
+    var points: [CGPoint]
+
+    func path(in rect: CGRect) -> Path {
+        return Path { path in
+            guard points.count > 1 else { return }
+            path.addLines(points)
         }
     }
 }
