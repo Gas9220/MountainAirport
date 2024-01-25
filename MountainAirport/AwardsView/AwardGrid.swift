@@ -8,8 +8,10 @@
 import SwiftUI
 
 struct AwardGrid: View {
+    @Binding var selected: AwardInformation?
     var title: String
     var awards: [AwardInformation]
+    var namespace: Namespace.ID
 
     var body: some View {
         Section(
@@ -23,12 +25,21 @@ struct AwardGrid: View {
                 )
         ) {
             ForEach(awards) { award in
-                NavigationLink(value: award) {
-                    AwardCardView(award: award)
-                        .foregroundColor(.black)
-                        .aspectRatio(0.67, contentMode: .fit)
-                }
+                AwardCardView(award: award)
+                    .foregroundColor(.black)
+                    .aspectRatio(0.67, contentMode: .fit)
+                    .onTapGesture {
+                        withAnimation {
+                            selected = award
+                        }
+                    }
+                    .matchedGeometryEffect(id: award.hashValue, in: namespace, anchor: .topLeading)
             }
         }
     }
+}
+
+#Preview {
+    @Namespace var namespace
+    return AwardGrid(selected: .constant(nil), title: "Test", awards: AppEnvironment().awardList, namespace: namespace)
 }

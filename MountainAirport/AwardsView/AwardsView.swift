@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct AwardsView: View {
+    @Namespace var cardNamespace
     @EnvironmentObject var flightNavigation: AppEnvironment
+    @State private var selectedAward: AwardInformation?
     var awardArray: [AwardInformation] {
         flightNavigation.awardList
     }
@@ -20,35 +22,52 @@ struct AwardsView: View {
     }
 
     var activeAwards: [AwardInformation] {
-      awardArray.filter { $0.awarded }
+        awardArray.filter { $0.awarded }
     }
 
     var inactiveAwards: [AwardInformation] {
-      awardArray.filter { !$0.awarded }
+        awardArray.filter { !$0.awarded }
     }
 
     var body: some View {
-        NavigationStack {
-            ScrollView {
-                LazyVGrid(columns: awardColumns, spacing: 15) {
-                    AwardGrid(title: "Awarded", awards: activeAwards)
-                    AwardGrid(title: "Not Awarded", awards: inactiveAwards)
+        ZStack {
+            if let award = selectedAward {
+                AwardDetails(award: award)
+                    .background(Color.white)
+                    .shadow(radius: 5.0)
+                    .clipShape(RoundedRectangle(cornerRadius: 20.0))
+                    .onTapGesture {
+                        withAnimation {
+                            selectedAward = nil
+                        }
+                    }
+                    .matchedGeometryEffect(id: award.hashValue, in: cardNamespace, anchor: .topLeading)
+                    .navigationTitle(award.title)
+            } else {
+                ScrollView {
+                    LazyVGrid(columns: awardColumns) {
+                        AwardGrid(
+                            selected: $selectedAward,
+                            title: "Awarded",
+                            awards: activeAwards,
+                            namespace: cardNamespace
+                        )
+                        AwardGrid(
+                            selected: $selectedAward,
+                            title: "Not Awarded",
+                            awards: inactiveAwards,
+                            namespace: cardNamespace
+                        )
+                    }
                 }
-                .navigationDestination(for: AwardInformation.self) { award in
-                    AwardDetails(award: award)
-                }
-                .font(.title)
-                .foregroundStyle(.white)
-                .padding()
+                .navigationTitle("Your Awards")
             }
-            .navigationTitle("Your Awards")
-            .padding()
-            .background(
-                Image("background-view")
-                    .resizable()
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
-            )
         }
+        .background(
+            Image("background-view")
+                .resizable()
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+        )
     }
 }
 
