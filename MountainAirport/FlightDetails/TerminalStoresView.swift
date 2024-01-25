@@ -2,7 +2,7 @@
 //  TerminalStoresView.swift
 //  MountainAirport
 //
-//  Created by Gaspare Monte on 23/01/24.
+//  Created by Gaspare Monte on 25/01/24.
 //
 
 import SwiftUI

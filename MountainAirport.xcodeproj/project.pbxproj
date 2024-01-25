@@ -47,6 +47,7 @@
 		6B6782262B61825E00974B02 /* HistoryPieChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B6782252B61825E00974B02 /* HistoryPieChart.swift */; };
 		6B6782282B61852900974B02 /* AwardStar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B6782272B61852900974B02 /* AwardStar.swift */; };
 		6BDF1C232B6252E100D32146 /* TerminalStoresView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BDF1C222B6252E100D32146 /* TerminalStoresView.swift */; };
+		6BDF1C252B6254FB00D32146 /* GatePathView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BDF1C242B6254FB00D32146 /* GatePathView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -91,6 +92,7 @@
 		6B6782252B61825E00974B02 /* HistoryPieChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryPieChart.swift; sourceTree = "<group>"; };
 		6B6782272B61852900974B02 /* AwardStar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AwardStar.swift; sourceTree = "<group>"; };
 		6BDF1C222B6252E100D32146 /* TerminalStoresView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TerminalStoresView.swift; sourceTree = "<group>"; };
+		6BDF1C242B6254FB00D32146 /* GatePathView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GatePathView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +173,7 @@
 				6B6782112B6131BA00974B02 /* FlightDetailHeader.swift */,
 				6B6782122B6131BA00974B02 /* FlightInfoPanel.swift */,
 				6BDF1C222B6252E100D32146 /* TerminalStoresView.swift */,
+				6BDF1C242B6254FB00D32146 /* GatePathView.swift */,
 			);
 			path = FlightDetails;
 			sourceTree = "<group>";
@@ -293,6 +296,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6BDF1C252B6254FB00D32146 /* GatePathView.swift in Sources */,
 				6B6782282B61852900974B02 /* AwardStar.swift in Sources */,
 				6B2CBDBA2B5FF13500FD38C7 /* FlightRow.swift in Sources */,
 				6B2CBDBF2B5FF4E800FD38C7 /* SearchFlights.swift in Sources */,

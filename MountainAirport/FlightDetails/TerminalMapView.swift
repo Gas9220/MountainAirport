@@ -26,6 +26,8 @@ struct TerminalMapView: View {
         }
         .overlay {
             TerminalStoresView(flight: flight)
+            GatePathView(flight: flight)
+                .foregroundStyle(.white)
         }
     }
 }

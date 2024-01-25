@@ -59,6 +59,11 @@ class FlightInformation: NSObject {
         return String(gate.prefix(1))
     }
 
+    var gateNumber: Int? {
+        let gateNumberString = gate.dropFirst()
+        return Int(gateNumberString)
+    }
+
     var otherEndTime: Date {
         var multiplier: Int
         if direction == .arrival {
