@@ -10,6 +10,39 @@ import SwiftUI
 struct FlightCardView: View {
     var flight: FlightInformation
 
+    func minutesBetween(_ start: Date, and end: Date) -> Int {
+        let diff = Calendar.current.dateComponents([.minute], from: start, to: end)
+        guard let minute = diff.minute else {
+            return 0
+        }
+        return abs(minute)
+    }
+
+    func flightTimeFraction(flight: FlightInformation) -> CGFloat {
+        let now = Date()
+        if flight.direction == .departure {
+            if flight.localTime > now {
+                return 0.0
+            } else if flight.otherEndTime < now {
+                return 1.0
+            } else {
+                let timeInFlight = minutesBetween(flight.localTime, and: now)
+                let fraction = Double(timeInFlight) / Double(flight.flightTime)
+                return CGFloat(fraction)
+            }
+        } else {
+            if flight.otherEndTime > now {
+                return 0.0
+            } else if flight.localTime < now {
+                return 1.0
+            } else {
+                let timeInFlight = minutesBetween(flight.otherEndTime, and: now)
+                let fraction = Double(timeInFlight) / Double(flight.flightTime)
+                return CGFloat(fraction)
+            }
+        }
+    }
+
     var body: some View {
         VStack {
             HStack {
@@ -20,7 +53,7 @@ struct FlightCardView: View {
 
             HStack(alignment: .bottom) {
                 DepartureTimeView(flight: flight)
-                Spacer()
+                FlightProgressView(flight: flight, progress: flightTimeFraction(flight: flight))
                 ArrivalTimeView(flight: flight)
             }
         }
@@ -43,9 +76,7 @@ struct DepartureTimeView: View {
             if flight.direction == .arrival {
                 Text(flight.otherAirport)
             }
-            Text(shortTimeFormatter.string(
-                    from: flight.departureTime)
-            )
+            Text(shortTimeFormatter.string(from: flight.departureTime))
         }
     }
 }
@@ -58,10 +89,24 @@ struct ArrivalTimeView: View {
             if flight.direction == .departure {
                 Text(flight.otherAirport)
             }
-            Text(shortTimeFormatter.string(
-                    from: flight.arrivalTime
-                )
+            Text(shortTimeFormatter.string(from: flight.arrivalTime)
             )
         }
+    }
+}
+
+struct FlightProgressView: View {
+    var flight: FlightInformation
+    var progress: CGFloat
+
+    var body: some View {
+        GeometryReader { proxy in
+            Image(systemName: "airplane")
+                .resizable()
+                .offset(x: proxy.size.width * progress)
+                .frame(width: 25, height: 25)
+                .foregroundColor(flight.statusColor)
+        }
+        .padding([.trailing], 20)
     }
 }

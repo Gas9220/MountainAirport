@@ -15,12 +15,9 @@ struct FlightTimelineView: View {
             Image("background-view")
                 .resizable()
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
-            ScrollView {
-                VStack {
-                    ForEach(flights) { flight in
-                        FlightCardView(flight: flight)
-                    }
-                }
+
+            GenericTimeline(events: flights) { flight in
+                FlightCardView(flight: flight)
             }
             .padding()
         }
