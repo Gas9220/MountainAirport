@@ -9,6 +9,7 @@ import SwiftUI
 
 struct FlightInfoPanel: View {
     var flight: FlightInformation
+    @State private var showTerminal = false
 
     var timeFormatter: DateFormatter {
         let tdf = DateFormatter()
@@ -33,17 +34,25 @@ struct FlightInfoPanel: View {
                     Text("Flying to \(flight.otherAirport)")
                 }
                 Text(flight.flightStatus) + Text(" (\(timeFormatter.string(from: flight.localTime)))")
-                if flight.gate.hasPrefix("A") {
-                    Image("terminal-a-map")
-                        .resizable()
-                        .frame(maxWidth: .infinity)
-                        .aspectRatio(contentMode: .fit)
-                } else {
-                    Image("terminal-b-map")
-                        .resizable()
-                        .frame(maxWidth: .infinity)
-                        .aspectRatio(contentMode: .fit)
+                Button {
+                    withAnimation(.spring(duration: 0.55, bounce: 0.45, blendDuration: 0)) {
+                        showTerminal.toggle()
+                    }
+                } label: {
+                    HStack {
+                        Text(showTerminal ? "Hide Terminal Map" : "Show Terminal Map")
+                        Spacer()
+                        Image(systemName: "airplane.circle")
+                            .imageScale(.large)
+                            .padding(10)
+                            .rotationEffect(.degrees(showTerminal ? 90 : 270))
+                            .scaleEffect(showTerminal ? 1.5 : 1.0)
+                    }
                 }
+                if showTerminal {
+                    TerminalMapView(flight: flight)
+                }
+                Spacer()
             }
         }
     }
