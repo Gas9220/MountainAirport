@@ -16,7 +16,7 @@ struct FlightTimelineView: View {
                 .resizable()
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
 
-            GenericTimeline(events: flights) { flight in
+            GenericTimeline(events: flights, timeProperty: \.localTime) { flight in
                 FlightCardView(flight: flight)
             }
             .padding()
